@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://capstone-backend-guvi.onrender.com",
+  baseURL: "https://connect-server.onrender.com",
 });
 
 export const getTimelinePosts = (id) => API.get(`/post/${id}/timeline`);
