@@ -1,7 +1,9 @@
 import axios from "axios";
+import {url} from '../config'
+
 
 const API = axios.create({
-  baseURL: "https://connect-server.onrender.com",
+  baseURL: url,
 });
 
 export const uploadImage = (data) => API.post("/upload/", data);

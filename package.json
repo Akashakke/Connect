@@ -51,5 +51,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://connect-server.onrender.com"
+  "proxy": "https://connect-server-one.vercel.app"
 }
