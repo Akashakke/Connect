@@ -12,6 +12,8 @@
   --video: #4A4EB7;
   --location: #EF5757;
 --shedule: #E1AE4A;
+--skyblue: #4A4EB7;
+--royalblue: #191a36;
 }
 
 .App {
@@ -19,6 +21,7 @@
   color: var(--black);
   background: whitesmoke;
   padding: 1rem 1rem;
+  color: #191a36;
 }
 
 
@@ -31,11 +34,12 @@
   border: none;
   border-radius: 0.5rem;
   background: var(--black);
+  border: 2px solid var(--royalblue);
   transition: all 100ms ease-out;
 }
 
 .button:hover {
-  color: var(--skyblue);
+  color: var(--royalblue);
   border: 2px solid var(--royalblue);
   cursor: pointer;
   background: transparent;

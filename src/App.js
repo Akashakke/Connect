@@ -4,11 +4,15 @@ import Home from "./pages/home/Home";
 import Auth from "./pages/Auth/Auth";
 import Profile from "./pages/Profile/Profile";
 import { useSelector } from "react-redux";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData);
   return (
     <div className="App">
+      <ToastContainer />
       <div className="blur" style={{ top: "-18%", right: "0" }}></div>
       <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
       <Routes>

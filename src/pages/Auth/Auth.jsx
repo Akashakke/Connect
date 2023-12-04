@@ -5,6 +5,8 @@ import { logIn, signUp } from "../../actions/AuthAction.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+
+
 const Auth = () => {
   const initialState = {
     firstname: "",
@@ -29,6 +31,9 @@ const Auth = () => {
     setData(initialState);
     setConfirmPass(confirmPass);
   };
+
+
+
 
   // handle Change in input
   const handleChange = (e) => {
