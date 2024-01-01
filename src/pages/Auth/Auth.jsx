@@ -4,7 +4,7 @@ import Logo from "../../img/logo.png";
 import { logIn, signUp } from "../../actions/AuthAction.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import logo from '../../img/free-connect-81-444626.webp'
 
 
 const Auth = () => {
@@ -19,7 +19,7 @@ const Auth = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignUp, setIsSignUp] = useState(false);
-
+  const [isGuest, setIsGuest] = useState(false);
   const [data, setData] = useState(initialState);
 
   const [confirmPass, setConfirmPass] = useState(true);
@@ -49,16 +49,26 @@ const Auth = () => {
         ? dispatch(signUp(data, navigate))
         : setConfirmPass(false);
     } else {
+      console.log(data)
       dispatch(logIn(data, navigate));
     }
   };
+
+const guestlogin = () => {
+  setData({
+    username: 'guest@mail.in',
+    password: 'guest'
+  })
+  // dispatch(logIn(data, navigate));
+
+ }
 
   return (
     <div className="Auth">
       {/* left side */}
 
       <div className="a-left">
-        <img src="https://www.logoarena.com/contestimages/public_new/2211/5203_1361717320_connect2.png" alt="" />
+        <img src={logo} alt="" />
 
         <div className="Webname">
           <h1>Connect</h1>
@@ -153,6 +163,7 @@ const Auth = () => {
               {isSignUp
                 ? "Already have an account Login"
                 : "Don't have an account Sign up"}
+              
             </span>
             <button
               className="button infoButton"
@@ -161,6 +172,8 @@ const Auth = () => {
             >
               {loading ? "Loading..." : isSignUp ? "SignUp" : "Login"}
             </button>
+            <button className="button infoButton" onClick={guestlogin}>Guest</button> 
+
           </div>
         </form>
       </div>
